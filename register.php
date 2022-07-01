@@ -16,8 +16,7 @@
 		$stmt = $conn->prepare("insert into registration(username, email, password) values(?, ?, ?)");
 		$stmt->bind_param("sss", $username, $email, $password);
 		$execval = $stmt->execute();
-		// echo "	Registration Successfully...";
-		// if(session_id() == '' || !isset($_POST)){session_start();}
+		
 		if(isset($_POST["submit_btn"]))
 		{
 			header("location:Login.html?status=success");
