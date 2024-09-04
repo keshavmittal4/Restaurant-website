@@ -1,10 +1,7 @@
 <?php
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	// $gender = $_POST['gender'];
-	// $roll_num = $_POST['roll_num'];
-	// $Course = $_POST['Course'];
-	// $number = $_POST['number'];
+	
 
 	// Database connection
 	$conn = new mysqli('localhost','root','','restaurant');
@@ -15,8 +12,7 @@
 		$stmt = $conn->prepare("insert into userlogin(username, password) values(?, ?)");
 		$stmt->bind_param("ss", $username, $password);
 		$execval = $stmt->execute();
-		// echo "	Registration Successfully...";
-		// if(session_id() == '' || !isset($_POST)){session_start();}
+		
 		if(isset($_POST["submit_btn"]))
 		{
 			header("location:index.html?status=success");
